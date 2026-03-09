@@ -4,30 +4,33 @@ const router = express.Router();
 const { saveUser, readUsers } = require('../utils/fileHandler');
 
 
-router.get('/listar_usuario', (req, res) => {
+router.get('/listar_carro', (req, res) => {
     const usuarios = readUsers();
     res.json(usuarios)
 })
 
-router.get('/listar_usuario/:id', (req, res) => {
-    const id_usuarios = parseInt(req.params.id);
-    const lista_usuarios = readUsers();
-    const usuario = lista_usuarios.find(u => u.id === id_usuarios);
+router.get('/listar_carro/:id', (req, res) => {
+    const id_carros = parseInt(req.params.id);
+    const lista_carros = readUsers();
+    const usuario = lista_carros.find(u => u.id === id_carros);
     if (usuario) {
         res.json(usuario);
     } else {
-        res.status(404).json({ message: "Usuário não encontrado" });
+        res.status(404).json({ message: "Carro não encontrado" });
     }
 })
 
-router.post('/cadastrar_usuarios', (req, res) => {
+router.post('/cadastrar_carros', (req, res) => {
     const lista_usuarios = readUsers();
     const novo_id = lista_usuarios.length > 0 ? Math.max(...lista_usuarios.map(u => u.id + 1))  : 1
  
     const novo_usuario = {
         id: novo_id,
         nome: req.body.nome,
-        sobrenome: req.body.sobrenome
+        marca: req.body.marca,
+        modelo: req.body.modelo,
+        ano: req.body.ano,
+        cor: req.body.cor
     }
 
     lista_usuarios.push(novo_usuario);
@@ -35,8 +38,8 @@ router.post('/cadastrar_usuarios', (req, res) => {
     res.status(201).json(novo_usuario);
 })
 
-router.put('/atualizar_usuarios/:id', (req, res) => {
-    const id_usuarios = parseInt(req.params.id);
+router.put('/atualizar_carros/:id', (req, res) => {
+    const id_carros = parseInt(req.params.id);
     const lista_usuarios = readUsers();
     const usuarioIndex = lista_usuarios.findIndex(u => u.id === id_usuarios)
 

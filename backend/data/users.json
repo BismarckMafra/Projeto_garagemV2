@@ -1,12 +1,18 @@
 [
   {
-    "id": 5,
-    "nome": "José",
-    "sobrenome": "Santos"
+    "id": 1,
+    "categoria": "Fast&Furious",
+    "marca_car": "Mitsubishi",
+    "modelo_car": "Eclipse",
+    "ano_modelo": 1999,
+    "cor": "Preto"
   },
   {
-    "id": 6,
-    "nome": "Emerson",
-    "sobrenome": "Lakedi"
+   "id": 2,
+    "categoria": "Fast&Furious",
+    "marca_car": "Nissan",
+    "modelo_car": "Skyline GT-R R34",
+    "ano_modelo": 2002,
+    "cor": "Prata"
   }
 ]
