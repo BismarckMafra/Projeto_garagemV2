@@ -8,11 +8,74 @@
     "cor": "Preto"
   },
   {
-   "id": 2,
+    "id": 2,
     "categoria": "Fast&Furious",
     "marca_car": "Nissan",
     "modelo_car": "Skyline GT-R R34",
     "ano_modelo": 2002,
     "cor": "Prata"
+  },
+  {
+    "id": 3,
+    "categoria": "Fast&Furious",
+    "marca_car": "Dodge",
+    "modelo_car": "Charger R/T",
+    "ano_modelo": 1970,
+    "cor": "Preto"
+  },
+  {
+    "id": 4,
+    "categoria": "Fast&Furious",
+    "marca_car": "Toyota",
+    "modelo_car": "Supra MK4",
+    "ano_modelo": 1998,
+    "cor": "Laranja"
+  },
+  {"id": 5,
+    "categoria": "Muscle",
+    "marca_car": "plymouth",
+    "modelo_car": "Barracuda",
+    "ano_modelo": 1964,
+    "cor": "Azul"
+
+  },
+  {
+    "id": 6,
+    "categoria": "Fast&Furious",
+    "marca_car": "Subaru",
+    "modelo_car": "Impreza WRX STI",
+    "ano_modelo": 2004,
+    "cor": "Azul"
+  },
+  {
+    "id": 7,
+    "categoria": "Fast&Furious",
+    "marca_car": "Honda",
+    "modelo_car": "Civic Si",
+    "ano_modelo": 1999,
+    "cor": "branco"
+  },
+  {
+    "id": 8,
+    "categoria": "Muscle",
+    "marca_car": "Ford",
+    "modelo_car": "Mustang GT",
+    "ano_modelo": 1969,
+    "cor": "Vermelho"
+  },{
+    "id": 9,
+    "categoria": "Muscle",
+    "marca_car": "Chevrolet",
+    "modelo_car": "Camaro SS",
+    "ano_modelo": 1969,
+    "cor": "Amarelo"
+  },
+  {
+    "id": 10,
+    "categoria": "Sport",
+    "marca_car": "Volkswagen",
+    "modelo_car": "golf Mk8 GTI",
+    "ano_modelo": 2025,
+    "cor": "Vermelho"
   }
 ]
