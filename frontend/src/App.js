@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+
 import './App.css';
+
+import Header from './components/header/Header';
+import Nav from './components/nav/Nav';
+import Footer from './components/footer/Footer';
+
+import Section from './pages/section/Section';
+import SectionAtualiza from './pages/update/SectionAtualiza';
+import SectionDeleta from './pages/deletar/SectionDeleta';
+import SectionCadastra from './pages/insert/SectionCadastra';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <BrowserRouter >
+        <Nav />
+        <Routes >
+          <Route path="/" element={<Section />} />
+          <Route path="/fastandfurious" element={<SectionUser />} />
+          <Route path="/usuarios/buscar" element={<SectionUserId />} />
+          <Route path="/cadastrar" element={<SectionCadastra />} />
+          <Route path="/atualizar" element={<SectionAtualiza />} />
+          <Route path="/deletar" element={<SectionDeleta />} />
+        </Routes>
+      </BrowserRouter>
+      <Footer />
     </div>
   );
 }
