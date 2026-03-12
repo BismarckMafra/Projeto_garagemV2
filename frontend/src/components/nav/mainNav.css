@@ -1,0 +1,24 @@
+.mainNav{
+    background-color: rgba(100, 150, 200, 0.6);
+    text-align: center;
+    
+}
+
+.mainNav ul li{
+    display: inline;
+    padding: 5px;
+    gap: inherit;
+    text-decoration: none;
+}
+
+.mainNav ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+.mainNav ul li:hover{
+    background-color: rgba(110, 160, 210, 0.8);
+    padding: 2px;
+    cursor: pointer;
+    border-radius: 20%;;
+}
