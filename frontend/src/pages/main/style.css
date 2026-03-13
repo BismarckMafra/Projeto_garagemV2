@@ -1,0 +1,9 @@
+
+.mainSection{
+    flex: auto;
+    padding: 20px;
+}
+
+.mainSection p{
+    text-align: justify;
+}
