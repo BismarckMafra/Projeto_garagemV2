@@ -3,9 +3,9 @@ import "./mainNav.css"
 
 function Nav () {
     return(
-        <nav className="mainNav">
-            <ul>
-                <li> <Link to="/"> Inicio </Link></li>
+        <nav class="mainNav">
+            <ul class="mainNavList">
+              <li><Link to="/"> Inicio </Link></li>
                 <li> <Link to="/fastandfurious"> Fast and Furious </Link> </li>
                 <li> <Link to="/drift_night"> Drift Night </Link> </li>
                 <li> <Link to="/sport"> Sport </Link> </li>

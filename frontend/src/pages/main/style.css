@@ -1,9 +1,43 @@
-
-.mainSection{
-    flex: auto;
-    padding: 20px;
+.cssMain{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    text-align: center;
 }
 
-.mainSection p{
-    text-align: justify;
+.containerMain{
+    align-items: center;
+    max-width: 800px;
+    padding: 20px;
+    background-color: rgba(255,165,0,0.6);
+}
+
+.cssMain p{
+    font-size: 1.5rem;
+    color: #333;
+    margin: 10px 0;
+}
+
+.containerCtaHeader{
+    center-content: center;
+    display: flex;
+}
+
+.ctaHeader{
+    display: flex;
+    justify-content: center;
+}
+
+.btnHeader{
+    background-color: #ff6600;
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
 }
