@@ -1,0 +1,45 @@
+.cssHeader{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 165, 0, 0.2);
+    padding: 2%;
+}
+
+.logoHeader{
+    color: #ff6600;
+    font-weight: 900;
+    font-size: 2rem;
+    letter-spacing: -0.05em;
+    font-style: italic;
+}   
+
+.textHeader{
+    color: white;
+}
+
+.ctaHeader{
+    display: flex;
+}
+
+.btnHeader{
+    background-color: #ff6600;
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.containerCtaHeader{
+    padding-right: 2%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+}

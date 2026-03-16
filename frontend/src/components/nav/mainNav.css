@@ -1,24 +1,23 @@
 .mainNav{
-    background-color: rgba(100, 150, 200, 0.6);
-    text-align: center;
-    
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px 0;
 }
 
-.mainNav ul li{
-    display: inline;
-    padding: 5px;
-    gap: inherit;
-    text-decoration: none;
+.mainNavList{
+    list-style: none;
+    display: flex;
+    gap: 20px;
 }
 
-.mainNav ul li a{
-    text-decoration: none;
+.mainNavList li a{
     color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-.mainNav ul li:hover{
-    background-color: rgba(110, 160, 210, 0.8);
-    padding: 2px;
-    cursor: pointer;
-    border-radius: 20%;;
+.mainNavList li a:hover{
+    color: #ff6600;
 }
