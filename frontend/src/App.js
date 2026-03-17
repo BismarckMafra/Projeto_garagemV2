@@ -9,10 +9,17 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Nav />
-      <Routes>
-        <Route path="/" element={<SectionMain />} />
-      </Routes>
+      <BrowserRouter >
+        <Nav />
+        <Routes >
+          <Route path="/" element={<Section />} />
+          <Route path="/fastandfurious" element={<SectionUser />} />
+          <Route path="/usuarios/buscar" element={<SectionUserId />} />
+          <Route path="/cadastrar" element={<SectionCadastra />} />
+          <Route path="/atualizar" element={<SectionAtualiza />} />
+          <Route path="/deletar" element={<SectionDeleta />} />
+        </Routes>
+      </BrowserRouter>
       <Footer />
     </div>
   );
