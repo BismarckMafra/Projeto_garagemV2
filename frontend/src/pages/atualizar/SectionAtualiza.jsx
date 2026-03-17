@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { buscarCarroPorId, atualizarCarros } from "./handleAtualizar";
 import "./styles.css";
-
+//dhg
 function SectionAtualiza() {
   const [idBusca, setIdBusca] = useState("");
   const navigate = useNavigate();
