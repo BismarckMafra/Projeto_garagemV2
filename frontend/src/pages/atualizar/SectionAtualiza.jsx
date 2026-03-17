@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { buscarCarroPorId, atualizarCarros } from "./handleAtualizar";
-import "./styles.css";
+import { buscaCarros, atualizarCarros } from "./handleAtualiza";
+import "./style.css";
 //dhg
 function SectionAtualiza() {
   const [idBusca, setIdBusca] = useState("");
@@ -14,7 +14,7 @@ function SectionAtualiza() {
   const [cor, setCor] = useState("");
 
   const handleBuscar = async () => {
-    const encontrado = await buscarCarroPorId(idBusca);
+    const encontrado = await buscaCarros(idBusca);
     setCarro(encontrado);
     setCategoria(encontrado.categoria || "");
     setMarca(encontrado.marca_car || "");
@@ -32,10 +32,10 @@ function SectionAtualiza() {
   };
 
   return (
-    <section className="page-container">
-      <h1 className="page-title">Atualizar carro</h1>
-      <div className="form search-row">
-        <div className="input-group">
+    <section class="page-container">
+      <h1 class="page-title">Atualizar carro</h1>
+      <div class="form search-row">
+        <div class="input-group">
           <label htmlFor="idBusca">ID do carro</label>
           <input
             id="idBusca"
@@ -44,7 +44,7 @@ function SectionAtualiza() {
             onChange={(e) => setIdBusca(e.target.value)}
           />
         </div>
-        <button type="button" className="button-primary" onClick={handleBuscar}>
+        <button type="button" class="button-primary" onClick={handleBuscar}>
           Buscar
         </button>
       </div>

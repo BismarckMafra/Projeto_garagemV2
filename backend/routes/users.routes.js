@@ -38,7 +38,7 @@ router.post('/cadastrar_carros', (req, res) => {
     res.status(201).json(carro);
 })
 
-router.put('/atualizar_carros/:id', (req, res) => {
+router.put('/atualizar_carro/:id', (req, res) => {
     const id_carros = parseInt(req.params.id);
     const lista_carros = readUsers();
     const carroIndex = lista_carros.findIndex(u => u.id === id_carros);

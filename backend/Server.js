@@ -9,7 +9,7 @@ const userRoutes = require('./routes/users.routes');
 
 app.use(express.json());
 app.use(cors({origin:'http://localhost:3001'}));
-app.use('/usuarios', userRoutes);
+app.use('/carros', userRoutes);
 
 app.listen(port, () => {
     console.log(`Server rodando em http://localhost:${port}`)
