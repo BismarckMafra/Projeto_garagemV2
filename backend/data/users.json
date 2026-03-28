@@ -1,18 +1,10 @@
 [
   {
-    "id": 1,
-    "categoria": "Fast&Furious",
-    "marca_car": "Mitsubishi",
-    "modelo_car": "Eclipse",
-    "ano_modelo": 1999,
-    "cor": "Preto"
-  },
-  {
     "id": 2,
     "categoria": "Fast&Furious",
     "marca_car": "Nissan",
     "modelo_car": "Skyline GT-R R34",
-    "ano_modelo": 2002,
+    "ano_modelo": "2003",
     "cor": "Prata"
   },
   {
@@ -31,13 +23,13 @@
     "ano_modelo": 1998,
     "cor": "Laranja"
   },
-  {"id": 5,
+  {
+    "id": 5,
     "categoria": "Muscle",
     "marca_car": "plymouth",
     "modelo_car": "Barracuda",
     "ano_modelo": 1964,
     "cor": "Azul"
-
   },
   {
     "id": 6,
@@ -62,7 +54,8 @@
     "modelo_car": "Mustang GT",
     "ano_modelo": 1969,
     "cor": "Vermelho"
-  },{
+  },
+  {
     "id": 9,
     "categoria": "Muscle",
     "marca_car": "Chevrolet",
@@ -76,6 +69,14 @@
     "marca_car": "Volkswagen",
     "modelo_car": "golf Mk8 GTI",
     "ano_modelo": 2025,
+    "cor": "Vermelho"
+  },
+  {
+    "id": 11,
+    "categoria": "Fast&Furious",
+    "marca_car": "Mitsubishi",
+    "modelo_car": "Eclipse",
+    "ano_modelo": "2001",
     "cor": "Vermelho"
   }
 ]

@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { buscaCarros, atualizarCarros } from "./handleAtualiza";
+import { buscaCarroAtualizar, atualizarCarro } from "./handleAtualiza";
 import "./style.css";
-//dhg
+
 function SectionAtualiza() {
   const [idBusca, setIdBusca] = useState("");
-  const navigate = useNavigate();
   const [carro, setCarro] = useState(null);
+  const navigate = useNavigate();
+
+  // Estados para os campos (preenchidos após a busca)
   const [categoria, setCategoria] = useState("");
   const [marca, setMarca] = useState("");
   const [modelo, setModelo] = useState("");
@@ -14,29 +16,40 @@ function SectionAtualiza() {
   const [cor, setCor] = useState("");
 
   const handleBuscar = async () => {
-    const encontrado = await buscaCarros(idBusca);
-    setCarro(encontrado);
-    setCategoria(encontrado.categoria || "");
-    setMarca(encontrado.marca_car || "");
-    setModelo(encontrado.modelo_car || "");
-    setAno(encontrado.ano_modelo || "");
-    setCor(encontrado.cor || "");
+    try {
+      const encontrado = await buscaCarroAtualizar(idBusca);
+      setCarro(encontrado);
+      // Preenche os inputs com os dados vindos do banco
+      setCategoria(encontrado.categoria || "");
+      setMarca(encontrado.marca_car || "");
+      setModelo(encontrado.modelo_car || "");
+      setAno(encontrado.ano_modelo || "");
+      setCor(encontrado.cor || "");
+    } catch (error) {
+      alert("Carro não encontrado!");
+      setCarro(null);
+    }
   };
 
-  const handleAtualizar = async (event) => {
+  const handleSalvarAlteracoes = async (event) => {
     event.preventDefault();
-    if (!carro) return;
-    const atualizado = await atualizarCarros(carro.id, { categoria, marca, modelo, ano, cor });
-    setCarro(atualizado);
-    navigate("/carros");
+    try {
+      await atualizarCarro(carro.id, { categoria, marca, modelo, ano, cor });
+      alert("Dados atualizados com sucesso!");
+      navigate("/"); // Volta para a principal
+    } catch (error) {
+      alert("Erro ao atualizar os dados.");
+    }
   };
 
   return (
-    <section class="page-container">
-      <h1 class="page-title">Atualizar carro</h1>
-      <div class="form search-row">
-        <div class="input-group">
-          <label htmlFor="idBusca">ID do carro</label>
+    <section className="page-container">
+      <h1 className="page-title">Atualizar Hot Wheel</h1>
+      
+      {/* Área de Busca */}
+      <div className="form search-row">
+        <div className="input-group">
+          <label htmlFor="idBusca">Digite o ID do item</label>
           <input
             id="idBusca"
             type="number"
@@ -44,73 +57,68 @@ function SectionAtualiza() {
             onChange={(e) => setIdBusca(e.target.value)}
           />
         </div>
-        <button type="button" class="button-primary" onClick={handleBuscar}>
+        <button type="button" className="button-primary" onClick={handleBuscar}>
           Buscar
         </button>
       </div>
+
+      {/* Formulário de Edição (Só aparece se encontrar o carro) */}
       {carro && (
-        <form onSubmit={handleAtualizar} className="form">
-          <p className="info-text">
-            Editando carro ID: <strong>{carro.id}</strong>
-          </p>
-
+        <form onSubmit={handleSalvarAlteracoes} className="form">
+          <p className="info-text">Editando item ID: <strong>{carro.id}</strong></p>
+          
           <div className="input-group">
-            <label htmlFor="categoria">Categoria</label>
-            <input
-              id="categoria"
-              type="text"
-              value={categoria}
-              onChange={(e) => setCategoria(e.target.value)}
-              required
+            <label>Categoria</label>
+            <input 
+              type="text" 
+              value={categoria} 
+              onChange={(e) => setCategoria(e.target.value)} 
+              required 
             />
           </div>
 
           <div className="input-group">
-            <label htmlFor="marca">Marca</label>
-            <input
-              id="marca"
-              type="text"
-              value={marca}
-              onChange={(e) => setMarca(e.target.value)}
-              required
+            <label>Marca</label>
+            <input 
+              type="text" 
+              value={marca} 
+              onChange={(e) => setMarca(e.target.value)} 
+              required 
             />
           </div>
 
           <div className="input-group">
-            <label htmlFor="modelo">Modelo</label>
-            <input
-              id="modelo"
-              type="text"
-              value={modelo}
-              onChange={(e) => setModelo(e.target.value)}
-              required
+            <label>Modelo</label>
+            <input 
+              type="text" 
+              value={modelo} 
+              onChange={(e) => setModelo(e.target.value)} 
+              required 
             />
           </div>
 
           <div className="input-group">
-            <label htmlFor="ano">Ano</label>
-            <input
-              id="ano"
-              type="number"
-              value={ano}
-              onChange={(e) => setAno(e.target.value)}
-              required
+            <label>Ano</label>
+            <input 
+              type="number" 
+              value={ano} 
+              onChange={(e) => setAno(e.target.value)} 
+              required 
             />
           </div>
 
           <div className="input-group">
-            <label htmlFor="cor">Cor</label>
-            <input
-              id="cor"
-              type="text"
-              value={cor}
-              onChange={(e) => setCor(e.target.value)}
-              required
+            <label>Cor</label>
+            <input 
+              type="text" 
+              value={cor} 
+              onChange={(e) => setCor(e.target.value)} 
+              required 
             />
           </div>
 
           <button type="submit" className="button-primary">
-            Atualizar
+            Salvar Alterações
           </button>
         </form>
       )}

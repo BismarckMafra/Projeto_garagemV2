@@ -1,16 +1,13 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:3000/listarCarros";
+const BASE_URL = "http://localhost:3000/carros";
 
-export async function atualizarCarro(id) {
-  const response = await axios.get(`${BASE_URL}/listar_carros/${id}`);
-  return response.data;
-}
-
-export async function atualizarCarro(id, { categoria, marca_car, modelo_car, ano_modelo, cor }) {
-  const response = await axios.put(
-    `${BASE_URL}/atualizar_carros/${id}`,
-    { categoria, marca_car, modelo_car, ano_modelo, cor }
-  );
-  return response.data;
+export async function listarCarros() {
+  try {
+    const response = await axios.get(`${BASE_URL}/listar_carro`);
+    return response.data; // O backend retorna a lista aqui
+  } catch (error) {
+    console.error("Erro ao buscar dados:", error);
+    return []; // Retorna vazio em caso de erro para não quebrar o map
+  }
 }

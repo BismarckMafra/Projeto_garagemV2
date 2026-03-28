@@ -1,0 +1,49 @@
+/* Container dos cards */
+.card-grid {
+  display: grid;
+  /* Cria 5 colunas de tamanhos iguais */
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 15px;
+  padding: 20px 0;
+}
+
+/* Estilo do Card (baseado no seu formulário) */
+.car-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 15px;
+  border-top: 5px solid #ff0000; /* Cor temática Hot Wheels */
+  transition: transform 0.2s;
+}
+
+.car-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-header h3 {
+  margin: 5px 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.car-id {
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: bold;
+}
+
+.card-body p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: #555;
+  border-bottom: 1px solid #eee;
+}
+
+/* Responsividade: se a tela for pequena, diminui as colunas */
+@media (max-width: 1024px) {
+  .card-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+  .card-grid { grid-template-columns: repeat(1, 1fr); }
+}
